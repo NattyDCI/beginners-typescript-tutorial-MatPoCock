@@ -1,7 +1,14 @@
 import { expect, it } from "vitest";
+import { string } from "zod";
+
+type StructureOfcache = {
+  [index: string]: string;
+}
+
 
 const createCache = () => {
-  const cache: Record<string, string> = {};
+  const cache: Record<string, string> = {};//  Record is allowing us to add multiple
+  //dinamic keys at runtime
 
   const add = (id: string, value: string) => {
     cache[id] = value;

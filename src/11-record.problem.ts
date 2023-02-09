@@ -1,7 +1,8 @@
 import { expect, it } from "vitest";
 
 const createCache = () => {
-  const cache = {};
+  const cache: Record<string, string> = {};
+  
 
   const add = (id: string, value: string) => {
     cache[id] = value;
@@ -17,6 +18,12 @@ const createCache = () => {
     remove,
   };
 };
+
+const valuesReturned = createCache().add( "say","hello");
+
+
+console.log("sayit",valuesReturned);
+
 
 it("Should add values to the cache", () => {
   const cache = createCache();
