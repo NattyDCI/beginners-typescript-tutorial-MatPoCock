@@ -1,7 +1,7 @@
 import { expect, it } from "vitest";
 
 interface User {
-  id: number;
+  id:number;
   firstName: string;
   lastName: string;
   role: "admin" | "user" | "super-admin";
@@ -17,8 +17,20 @@ interface Post {
  * How do we ensure that makeUser ALWAYS
  * returns a user?
  */
-const makeUser = () => {
-  return {};
+const makeUser = (): User => {
+  
+  return {
+    id: 1,
+    firstName: "John",
+    lastName: "Doe",
+    role: "admin",
+    posts: [{
+      id: 1,
+      title: "Post 1"
+     },
+    ],
+  
+  };
 };
 
 it("Should return a valid user", () => {
