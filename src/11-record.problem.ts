@@ -1,4 +1,7 @@
+import { KeyObject } from "crypto";
 import { expect, it } from "vitest";
+
+
 
 const createCache = () => {
   const cache: Record<string, string> = {};
@@ -22,7 +25,8 @@ const createCache = () => {
 const valuesReturned = createCache().add( "say","hello");
 
 
-console.log("sayit",valuesReturned);
+console.log("say",valuesReturned);
+
 
 
 it("Should add values to the cache", () => {
