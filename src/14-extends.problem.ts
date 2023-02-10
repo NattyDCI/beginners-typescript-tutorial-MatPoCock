@@ -1,3 +1,4 @@
+import { string } from "zod";
 import { Equal, Expect } from "./helpers/type-utils";
 
 /**
@@ -6,20 +7,21 @@ import { Equal, Expect } from "./helpers/type-utils";
  * make it more DRY?
  */
 
-interface User {
-  id: string;
+type Inherits = {
+  id:string,
+};
+
+interface User extends Inherits {
   firstName: string;
   lastName: string;
 }
 
-interface Post {
-  id: string;
+interface Post extends Inherits {
   title: string;
   body: string;
 }
 
-interface Comment {
-  id: string;
+interface Comment extends Inherits {
   comment: string;
 }
 

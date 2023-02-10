@@ -14,7 +14,7 @@ interface Post {
  * How do we type this return statement so it's both
  * User AND { posts: Post[] }
  */
-export const getDefaultUserAndPosts = (): unknown => {
+export const getDefaultUserAndPosts = (): User & { posts: Post[] }=> {
   return {
     id: "1",
     firstName: "Matt",
@@ -32,3 +32,5 @@ export const getDefaultUserAndPosts = (): unknown => {
 const userAndPosts = getDefaultUserAndPosts();
 
 console.log(userAndPosts.posts[0]);
+// this is letting us, from two interfaces annotate the return type and intersect the two Types, so that one is creating an array of Posts in the following way
+// with intersection you combine them… when you use extend you just inherit. wich is the main difference
